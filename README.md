@@ -20,9 +20,9 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 - Manipular processos e verificar logs
 - Configurar interfaces de rede e testar conectividade
 
-[Fase 1.1]
-[Fase 1.2]
-[Fase 1.3]
+[Fase 1.1](https://github.com/williampaludo/Roadmap-Devops/tree/main/Fase%201.1)
+[Fase 1.2](https://github.com/williampaludo/Roadmap-Devops/tree/main/Fase%201.2)
+[Fase 1.3](https://github.com/williampaludo/Roadmap-Devops/tree/main/Fase%201.3)
 
 ### **2️⃣ Programação e Scripting**
 🔹 Linguagens essenciais:
