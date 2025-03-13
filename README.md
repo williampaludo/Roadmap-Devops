@@ -1,4 +1,3 @@
-# Roadmap Devops
  Minha rota de estudos para devops.
 
 
@@ -20,6 +19,10 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 - Gerenciar arquivos e diretórios
 - Manipular processos e verificar logs
 - Configurar interfaces de rede e testar conectividade
+
+[Fase 1.1]
+[Fase 1.2]
+[Fase 1.3]
 
 ### **2️⃣ Programação e Scripting**
 🔹 Linguagens essenciais:
