@@ -1,35 +1,37 @@
-# Fase 1.2 - Redes e Segurança na AWS
+# Fase 1.2 - Redes e Segurança
 
 ## Revisão de Conceitos Fundamentais
-Nesta fase, abordamos os principais conceitos de redes e segurança essenciais para a AWS, incluindo:
+Nesta fase, abordamos os principais conceitos de redes e segurança essenciais para administração de sistemas e infraestrutura:
 
 ### **1. Conceitos de TCP/IP**
 - **Camadas do modelo OSI:** Física, Enlace, Rede, Transporte, Sessão, Apresentação e Aplicação.
 - **Endereçamento IPv4 e IPv6:** Endereços públicos e privados, sub-redes e CIDR.
 - **Protocolos importantes:** TCP (confiável), UDP (rápido, mas sem verificação de entrega), ICMP (diagnóstico, como ping).
+- **Portas e serviços:** Associar serviços comuns às suas respectivas portas (exemplo: HTTP - 80, HTTPS - 443, SSH - 22).
 
 ### **2. DNS (Domain Name System)**
 - Resolve nomes de domínio para endereços IP.
 - Tipos de registros: A, AAAA, CNAME, MX, TXT.
-- AWS Route 53 para gerenciamento de domínios.
+- Ferramentas para consulta DNS: `nslookup`, `dig`, `host`.
 
 ### **3. VPNs (Virtual Private Networks)**
 - Criam conexões seguras entre redes privadas e públicas.
 - Tipos: Site-to-Site (conecta redes inteiras), Client VPN (conecta usuários remotos).
-- AWS Site-to-Site VPN permite conexão segura com redes locais.
+- Configuração básica de OpenVPN e WireGuard.
 
 ### **4. Firewalls e Proxies**
-- **Firewalls:** Controlam tráfego de rede com base em regras.
-- **Proxies:** Intermediários entre clientes e servidores para controle e segurança.
-- AWS WAF (Web Application Firewall) protege aplicações Web contra ameaças comuns.
+- **Firewalls:** Controlam tráfego de rede com base em regras (iptables, firewalld, UFW).
+- **Proxies:** Intermediários entre clientes e servidores para controle e segurança (Squid, HAProxy).
+- **Filtros e bloqueios:** Controle de acesso baseado em endereços IP, portas e domínios.
 
 ### **5. TLS/SSL (Transport Layer Security / Secure Sockets Layer)**
 - Protegem a comunicação entre clientes e servidores.
-- Certificados SSL/TLS são usados para criptografia de tráfego HTTPS.
-- AWS Certificate Manager (ACM) gerencia certificados SSL/TLS.
+- Geração e uso de certificados SSL/TLS com OpenSSL.
+- Como configurar HTTPS em servidores web.
 
 ---
 ## Configuração de Firewalls e Regras de Segurança em Linux
+
 Aqui estão alguns comandos para configurar firewalls no Linux:
 
 ### **1. Configuração com UFW (Uncomplicated Firewall)**
@@ -78,46 +80,24 @@ sudo iptables -L -v
 
 ---
 ## Implementação de Boas Práticas de IAM e Segurança na Nuvem
-A segurança na AWS é baseada no princípio de **Least Privilege (Menos Privilégios Possíveis)**. Algumas práticas recomendadas:
+A segurança em ambientes de nuvem exige controles de acesso adequados e monitoramento constante. Algumas práticas recomendadas:
 
-### **1. Criar um Usuário IAM e Evitar o Uso da Conta Root**
-```sh
-aws iam create-user --user-name MeuUsuario
-```
+### **1. Princípio do Menor Privilégio**
+- Criar usuários e grupos com permissões mínimas necessárias.
+- Evitar o uso da conta root para operações diárias.
 
-### **2. Criar uma Política de Permissão Restrita**
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": ["s3:ListBucket", "s3:GetObject"],
-            "Resource": "arn:aws:s3:::meu-bucket/*"
-        }
-    ]
-}
-```
+### **2. Uso de Autenticação Multifator (MFA)**
+- Configurar autenticação em dois fatores para acessos administrativos.
 
-### **3. Criar um Grupo IAM e Atribuir a Política**
-```sh
-aws iam create-group --group-name GrupoRestrito
-aws iam attach-group-policy --group-name GrupoRestrito --policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
-```
+### **3. Monitoramento e Auditoria**
+- Habilitar logs de segurança e monitorar atividades suspeitas.
+- Ferramentas como auditd, fail2ban e logs do sistema para detectar acessos indevidos.
 
-### **4. Habilitar Autenticação Multifator (MFA)**
-```sh
-aws iam enable-mfa-device --user-name MeuUsuario --serial-number arn:aws:iam::123456789012:mfa/MeuUsuario --authentication-code-1 123456 --authentication-code-2 654321
-```
-
-### **5. Monitoramento e Auditoria com AWS CloudTrail**
-```sh
-aws cloudtrail create-trail --name MeuTrail --s3-bucket-name meu-log-bucket
-```
-
-Com essas configurações, garantimos que apenas usuários autorizados tenham acesso aos recursos e podemos monitorar atividades suspeitas.
+### **4. Proteção contra ataques comuns**
+- Configuração de regras no firewall para bloquear IPs suspeitos.
+- Uso de IDS/IPS (Intrusion Detection/Prevention Systems) como Snort e Suricata.
 
 ---
 ## **Conclusão**
-Esta fase abordou os conceitos essenciais de redes e segurança na AWS, desde fundamentos de TCP/IP e VPNs até práticas avançadas de firewall e IAM. O próximo passo é aprofundar os conhecimentos em automação e programação na AWS, que será tratado na fase **1.3**.
+Esta fase abordou os conceitos essenciais de redes e segurança, incluindo fundamentos de TCP/IP, VPNs, firewalls e práticas de segurança. O próximo passo é aprofundar os conhecimentos em automação e programação, que será tratado na fase **1.3**.
 
