@@ -38,6 +38,9 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 - Fluxo de trabalho com Git (commit, branch, merge, rebase)
 - Uso do GitHub para versionamento e colaboração
 
+
+[Fase 2](https://github.com/williampaludo/Roadmap-Devops/tree/main/Fases%20do%20estudo/Fase%202.1)
+
 **🔧 Prática:**
 - Criar e gerenciar repositórios
 - Trabalhar com pull requests e revisões de código
@@ -46,6 +49,8 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 🔹 Fundamentos:
 - Criação e gerenciamento de containers com Docker
 - Deploy de aplicações com Kubernetes
+
+[Aqui](https://github.com/williampaludo/Roadmap-Devops/tree/main/Fases%20do%20estudo/Fase%202.2)
 
 **🔧 Prática:**
 - Criar Dockerfiles e gerenciar imagens
@@ -59,6 +64,9 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 **🔧 Prática:**
 - Criar e gerenciar infraestrutura na AWS com Terraform
 - Automação de configuração com Ansible
+
+[Aqui](https://github.com/williampaludo/Roadmap-Devops/tree/main/Fases%20do%20estudo/Fase%202.4)
+
 
 ### **6️⃣ Cloud Computing (AWS, Azure, GCP)**
 🔹 Conceitos:
@@ -77,6 +85,8 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 **🔧 Prática:**
 - Configurar métricas e alertas no Prometheus
 - Criar dashboards no Grafana
+
+[Aqui](https://github.com/williampaludo/Roadmap-Devops/blob/main/Fases%20do%20estudo/Fase%202.5/README.md)
 
 ### **8️⃣ Segurança e Compliance**
 🔹 Conceitos:
