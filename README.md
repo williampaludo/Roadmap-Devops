@@ -104,5 +104,5 @@ Este roadmap detalha o caminho para se tornar um profissional de **DevOps**, abo
 - [Terraform Docs](https://developer.hashicorp.com/terraform/docs)
 
 ---
-📌 **Autor:** [Seu Nome](https://github.com/seu-usuario)  
+📌 **Autor:** [William C S Paludo](https://github.com/williampaludo)  
 📌 **Última Atualização:** Março de 2025
